@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'programming/index'
+  root 'programming#index'
   get 'programming', to: 'programming#index'
   get 'programming/add' 
   post 'programming/add', to: 'programming#create'
