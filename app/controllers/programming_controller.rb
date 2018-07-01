@@ -29,8 +29,7 @@ class ProgrammingController < ApplicationController
    end
 
    def delete
-    obj = Programming.find(params[:id])
-    obj.destroy
+    Programming.find(params[:id]).destroy
     redirect_to '/programming'
    end
 
