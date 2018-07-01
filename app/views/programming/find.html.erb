@@ -1,0 +1,30 @@
+<table>
+    <tr>
+        <th>タイトル</th>
+        <th>エラー</th>
+        <th>解決策</th>
+        <th>参考リンク</th>
+    </tr>
+    <% @programming.each do |obj|%>
+        <tr>
+            <td>
+                <%= obj.title %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= obj.question %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= obj.answer %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= obj.url %>
+            </td>
+        </tr>
+        <%end%>
+</table>

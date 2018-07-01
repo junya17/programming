@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'programming#index'
   get 'programming', to: 'programming#index'
   get 'programming/add' 
+  post 'programming/find'
   post 'programming/add', to: 'programming#create'
   get 'programming/edit/:id', to: 'programming#edit'
   post 'programming/edit/:id', to: 'programming#update'

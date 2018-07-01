@@ -34,6 +34,11 @@ class ProgrammingController < ApplicationController
     redirect_to '/programming'
    end
 
+   def find
+    #ViewのFormで取得したパラメータをモデルに渡す
+    @programming = Programming.search(params[:search])
+   end
+
     private
     def programming_params
         params.require(:programming).permit(:title, :question, :answer, :url)
