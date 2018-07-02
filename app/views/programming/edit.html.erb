@@ -3,7 +3,7 @@
                 <tr>
                     <th>タイトル</th>
                     <td>
-                        <%= form.text_field :title , :class=>'form-control'%>
+                        <%= form.text_field :title , size: 100, :class=>'form-control'%>
                     </td>
                 </tr>
             </div>
@@ -11,7 +11,7 @@
                 <tr>
                     <th>エラー</th>
                     <td>
-                        <%= form.text_field :question, :class=>'form-control' %>
+                        <%= form.text_field :question, size: 100, :class=>'form-control' %>
                     </td>
                 </tr>
             </div>
@@ -19,7 +19,7 @@
                 <tr>
                     <th>解決策</th>
                     <td>
-                        <%= form.text_field :answer, :class=>'form-control' %>
+                        <%= form.text_field :answer, size: 100, :class=>'form-control' %>
                     </td>
                 </tr>
             </div>
@@ -27,7 +27,7 @@
                 <tr>
                     <th>参照リンク</th>
                     <td>
-                        <%= form.text_field :url , :class=>'form-control' %>
+                        <%= form.text_field :url , size: 100, :class=>'form-control' %>
                     </td>
                 </tr>
             </div>
@@ -35,7 +35,7 @@
                 <tr>
                     <th></th>
                     <td>
-                        <%= form.submit "送信" , :class=>"btn btn-primary"%>
+                        <%= form.submit "送信" , size: 100, :class=>"btn btn-primary"%>
                 </tr>
             </div>
             <%end%>
