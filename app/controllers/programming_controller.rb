@@ -1,4 +1,11 @@
 class ProgrammingController < ApplicationController
+    before_action :authenticate_account!, only: [:login_check, :show, :new ,:edit ,:index ,:add ,:find]
+
+    def login_check
+        @account = current_account
+        @msg = 'you logined at: '+ @account.current_sign_in_at.to_s
+    end
+
    def index
     @programming = Programming.page params[:page]
    end

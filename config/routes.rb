@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :accounts
+  get 'programming/login_check'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'programming#index'
   get 'programming', to: 'programming#index'

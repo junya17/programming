@@ -23,23 +23,27 @@
       <li class="nav-item">
         <a class="nav-link" href="/programming/add">New </a>
       </li>
+      <li class="nav-item"> 
+      <% if current_account.nil? %>
+        <%= link_to 'go to login_check page!' .html_safe,new_account_session_path, :class=>"nav-link" %>    
+        <% else %>
+        <%= link_to "sign out" .html_safe, destroy_account_session_path, method: :delete, :class=>"nav-link"%>
+        <%end%>
+      </li>
+      <li class="nav-item">
+        <% if current_account %>
+          <span class="navbar-text"><%= "ようこそ！#{current_account.email}さん！"%></span>
+        <%end%>
+      </li>
       
     </ul>
 
-    <div class="form-inline my-2 my-lg-0">
-    <%= form_tag controller: "programming", action: "find", :method => 'get' do %>
-        <%= text_field_tag :search, params[:search],{class: "form-control mr-sm-2"} %>
-      </div>
-        <%= submit_tag "Search", :name => nil, :class => "btn btn-outline-success my-2 my-sm-0" %>
-    <% end %>
-    </form>
     
-  </div>
+    
 </nav>
 <div class="container">
-<div class="row">
     <%= yield %>
- </div>
+
  </div>
   <div class="card-footer">
     <small class="text-muted">create by sumiya</small>
