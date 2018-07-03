@@ -1,6 +1,6 @@
 class ProgrammingController < ApplicationController
    def index
-    @programming = Programming.all
+    @programming = Programming.page params[:page]
    end
 
    def show
