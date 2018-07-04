@@ -7,20 +7,20 @@ class ProgrammingController < ApplicationController
     end
 
    def index
-    @programming = Programming.page params[:page]
+    @programming = current_account.programming.page params[:page]
    end
 
    def show
-    @programming = Programming.find(params[:id])
+    @programming = current_account.programming.find(params[:id])
    end
 
    def add
-     @programming = Programming.new
+     @programming = current_account.programming.new
    end
 
    def create
     if request.post? then
-        ogj = Programming.create(programming_params)
+        ogj = current_account.programming.create(programming_params)
     end
     redirect_to '/programming'
    end
@@ -47,6 +47,6 @@ class ProgrammingController < ApplicationController
 
     private
     def programming_params
-        params.require(:programming).permit(:title, :question, :answer, :url)
+        params.require(:programming).permit(:account_id, :title, :question, :answer, :url)
     end   
 end

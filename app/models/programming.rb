@@ -1,6 +1,8 @@
 class Programming < ApplicationRecord
+    belongs_to :account 
     validates :title, presence: true
     validates :question, presence: true
+    validates :account_id, presence: true
     
         def self.search(search) #self.でクラスメソッドとしている
           if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
