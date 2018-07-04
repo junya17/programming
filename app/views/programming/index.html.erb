@@ -6,7 +6,10 @@
 <table class="table table-bordered">
     <thead class="thead-dark"> 
         <tr>
-            <th>タイトル</th><th>エラー</th><th>解決策</th><th>参考リンク</th><th></th><th></th>
+            <th>タイトル</th><th>エラー</th><th>解決策</th><th>参考リンク</th>
+            <% if current_account %>
+                <th></th><th></th>
+                <%end%>
         </tr>
     </thead>
     <tbody>
@@ -16,9 +19,11 @@
             <td><%= obj.question %></td>
             <td><%= obj.answer %></td>
             <td><%= obj.url %></td>
+            <% if current_account %>
             <td><a href="/programming/edit/<%= obj.id%>">編集</a></td>
             <td><a href="javascript:window.delData(
                 <%= (obj.id.to_s + " , '".to_s + obj.title.to_s).html_safe %>'); ">削除</a></td>
+                <%end%>
         </tr>
     </tbody>
         <% end %>
