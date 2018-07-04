@@ -1,5 +1,5 @@
 class ProgrammingController < ApplicationController
-    before_action :authenticate_account!, only: [:login_check, :show, :new ,:edit  ,:add ,:find]
+    before_action :authenticate_account!, only: [:login_check, :show, :new ,:edit ,:add ,:find]
 
     def login_check
         @account = current_account
@@ -7,7 +7,11 @@ class ProgrammingController < ApplicationController
     end
 
    def index
-    @programming = Programming.page params[:page]
+    if current_account 
+        @programming = current_account.programming.page params[:page]
+    else
+        @programming = Programming.page params[:page]
+    end
    end
 
    def show
