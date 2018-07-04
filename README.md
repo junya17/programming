@@ -24,12 +24,3 @@ Things you may want to cover:
 * ...
 
 
-#<div class="form-inline my-2 my-lg-0">
-    #<%= form_tag controller: "programming", action: "find", :method => 'get' do %>
-        #<%= text_field_tag :search, params[:search],{class: "form-control mr-sm-2"} %>
-      #</div>
-        #<%= submit_tag "Search", :name => nil, :class => "btn btn-outline-success my-2 my-sm-0" %>
-    #<% end %>
-    #</form>
-    
-  #</div>

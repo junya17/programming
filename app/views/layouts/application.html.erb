@@ -37,8 +37,14 @@
           <span class="navbar-text"><%= "ようこそ！#{current_account.email}さん！"%></span>
         <%end%>
       </li>
-      
     </ul>
+    <%= form_tag controller: "/programming", action: "find" do %>
+      <div class="form-inline my-2 my-lg-0">
+          <%= text_field_tag :search, params[:search],{class: "form-control mr-sm-2"} %>
+          <%= submit_tag "Search", :name => nil, :class => "btn btn-outline-success my-2 my-sm-0" %>
+      </div>
+    <% end %>
+    
 
     
     

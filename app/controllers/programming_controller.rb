@@ -1,5 +1,5 @@
 class ProgrammingController < ApplicationController
-    before_action :authenticate_account!, only: [:login_check, :show, :new ,:edit ,:add ,:find]
+    before_action :authenticate_account!, only: [:login_check, :show, :new ,:edit ,:add]
 
     def login_check
         @account = current_account
@@ -46,7 +46,11 @@ class ProgrammingController < ApplicationController
 
    def find
     #ViewのFormで取得したパラメータをモデルに渡す
-    @programming = Programming.search(params[:search])
+    if current_account 
+        @programming = current_account.programming.page.search(params[:search])
+    else
+        @programming = Programming.page.search(params[:search])
+    end
    end
 
     private
